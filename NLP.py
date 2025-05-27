@@ -51,15 +51,15 @@ class ICD10MatcherBERT:
 # ตัวอย่างใช้งาน
 
 # สร้าง matcher และเซฟ embeddings ครั้งแรก
-matcher = ICD10MatcherBERT(r'D:\OneFile\WorkOnly\AllCode\Python\NLP\codes.csv')
-matcher.save_embeddings(r'D:\OneFile\WorkOnly\AllCode\Python\NLP\icd_embeddings.pt')
+matcher = ICD10MatcherBERT(r'codes.csv')
+matcher.save_embeddings(r'icd_embeddings.pt')
 print('Embeddings and saved successfully!')
 
 # ครั้งต่อไปโหลด embeddings จากไฟล์แทน encode ใหม่
 matcher2 = ICD10MatcherBERT(
-    icd_csv_path=r'D:\OneFile\WorkOnly\AllCode\Python\NLP\codes.csv',
+    icd_csv_path=r'codes.csv',
     load_saved=True,
-    embeddings_path=r'D:\OneFile\WorkOnly\AllCode\Python\NLP\icd_embeddings.pt'
+    embeddings_path=r'icd_embeddings.pt'
 )
 
 input_texts = [
